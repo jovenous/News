@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.hilt.android)
 }
 
 android {
@@ -38,6 +41,23 @@ android {
 }
 
 dependencies {
+    // Coil (for images)
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
+    // Kotlinx.serialization JSON
+    implementation(libs.kotlinx.serialization.json)
+    // Room
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.runtime)
+    // Hilt Nav Compose
+    implementation(libs.androidx.hilt.lifecycle.viewmodel.compose)
+    // Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
+    // Jetpack Compose Nav
+    implementation(libs.androidx.navigation.compose)
+
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3)
