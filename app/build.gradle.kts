@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.androidx.room.runtime)
     // Hilt Nav Compose
     implementation(libs.androidx.hilt.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.hilt.navigation.compose)
     // Hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
