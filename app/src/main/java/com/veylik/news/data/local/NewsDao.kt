@@ -21,7 +21,7 @@ interface NewsDao {
     @Delete
     suspend fun deleteSubscription(subscriptionDbModel: SubscriptionDbModel)
 
-    @Query("SELECT * FROM articles WHERE topic in (:topics) ORDER BY publishedAt DESC")
+    @Query("SELECT * FROM articles WHERE topic IN (:topics) ORDER BY publishedAt DESC")
     fun getAllArticlesByTopics(topics: List<String>): Flow<List<ArticleDbModel>>
 
     @Insert(onConflict = IGNORE)
