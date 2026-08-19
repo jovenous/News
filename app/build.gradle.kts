@@ -41,6 +41,9 @@ android {
 }
 
 dependencies {
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.kotlinx.serialization)
     // Coil (for images)
     implementation(libs.coil.compose)
     implementation(libs.coil.network.okhttp)
