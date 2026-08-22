@@ -5,6 +5,9 @@ import androidx.room.Room
 import com.veylik.news.data.local.NewsDao
 import com.veylik.news.data.local.NewsDatabase
 import com.veylik.news.data.remote.NewsApiService
+import com.veylik.news.data.repository.NewsRepositoryImpl
+import com.veylik.news.domain.repository.NewsRepository
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,6 +24,12 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 @Module
 interface DataModule {
+
+    @Binds
+    @Singleton
+    fun bindNewsRepository(
+        impl: NewsRepositoryImpl
+    ): NewsRepository
 
     companion object {
 
