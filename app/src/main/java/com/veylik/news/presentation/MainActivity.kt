@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.lifecycle.lifecycleScope
 import com.veylik.news.data.remote.NewsApiService
 import com.veylik.news.domain.repository.NewsRepository
+import com.veylik.news.presentation.screens.subscriptions.SubscriptionsScreen
 import com.veylik.news.presentation.ui.theme.NewsTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -28,7 +29,10 @@ class MainActivity : ComponentActivity() {
         }
         setContent {
             NewsTheme {
+                SubscriptionsScreen(
+                    onNavigateToSettings = {},
 
+                )
             }
         }
     }
