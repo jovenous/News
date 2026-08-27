@@ -1,11 +1,14 @@
 package com.veylik.news.presentation
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.core.net.toUri
 import androidx.lifecycle.lifecycleScope
+import coil3.toUri
 import com.veylik.news.data.remote.NewsApiService
 import com.veylik.news.domain.repository.NewsRepository
 import com.veylik.news.presentation.screens.subscriptions.SubscriptionsScreen
@@ -30,8 +33,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             NewsTheme {
                 SubscriptionsScreen(
-                    onNavigateToSettings = {},
+                    onNavigateToSettings = {
 
+                    },
                 )
             }
         }
