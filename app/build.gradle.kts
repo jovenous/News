@@ -41,7 +41,10 @@ android {
 }
 
 dependencies {
-
+    // WorkManager: Kotlin + coroutines | Inject WorkManager with Hilt
+    implementation(libs.androidx.hilt.work)
+    ksp(libs.androidx.hilt.compiler)
+    implementation(libs.androidx.work.runtime.ktx)
     // Compose Material Icons Extended
     implementation(libs.androidx.compose.material.icons.extended)
     // Retrofit
