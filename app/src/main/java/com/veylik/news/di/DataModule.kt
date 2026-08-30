@@ -7,7 +7,9 @@ import com.veylik.news.data.local.NewsDao
 import com.veylik.news.data.local.NewsDatabase
 import com.veylik.news.data.remote.NewsApiService
 import com.veylik.news.data.repository.NewsRepositoryImpl
+import com.veylik.news.data.repository.SettingsRepositoryImpl
 import com.veylik.news.domain.repository.NewsRepository
+import com.veylik.news.domain.repository.SettingsRepository
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -31,6 +33,12 @@ interface DataModule {
     fun bindNewsRepository(
         impl: NewsRepositoryImpl
     ): NewsRepository
+
+    @Binds
+    @Singleton
+    fun bindSettingsRepository(
+        impl: SettingsRepositoryImpl
+    ): SettingsRepository
 
     companion object {
 

@@ -41,6 +41,8 @@ android {
 }
 
 dependencies {
+    // Data Store
+    implementation(libs.androidx.datastore.preferences)
     // WorkManager: Kotlin + coroutines | Inject WorkManager with Hilt
     implementation(libs.androidx.hilt.work)
     ksp(libs.androidx.hilt.compiler)

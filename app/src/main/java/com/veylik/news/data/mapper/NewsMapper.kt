@@ -3,6 +3,7 @@ package com.veylik.news.data.mapper
 import com.veylik.news.data.local.ArticleDbModel
 import com.veylik.news.data.remote.NewsResponseDto
 import com.veylik.news.domain.entity.Article
+import com.veylik.news.domain.entity.Interval
 import java.text.SimpleDateFormat
 import java.util.Locale
 
@@ -17,6 +18,12 @@ fun NewsResponseDto.toDbModels(topic: String): List<ArticleDbModel> {
             topic = topic,
             publishedAt = it.publishedAt.toTimeStamp()
         )
+    }
+}
+
+fun Int.toInterval(): Interval {
+    return Interval.entries.first {
+        it.minutes == this
     }
 }
 
