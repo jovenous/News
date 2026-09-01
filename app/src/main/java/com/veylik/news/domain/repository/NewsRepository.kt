@@ -1,11 +1,14 @@
 package com.veylik.news.domain.repository
 
 import com.veylik.news.domain.entity.Article
+import com.veylik.news.domain.entity.RefreshConfig
 import kotlinx.coroutines.flow.Flow
 
 interface NewsRepository {
 
     fun getAllSubscriptions(): Flow<List<String>>
+
+    fun startBackgroundRefresh(refreshConfig: RefreshConfig)
 
     suspend fun addSubscription(topic: String)
 
