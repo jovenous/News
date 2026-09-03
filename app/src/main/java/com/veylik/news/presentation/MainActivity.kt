@@ -31,7 +31,6 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         lifecycleScope.launch {
             repository.addSubscription("Kotlin")
-            repository.updateArticlesForTopic("Kotlin")
         }
         setContent {
             NewsTheme {

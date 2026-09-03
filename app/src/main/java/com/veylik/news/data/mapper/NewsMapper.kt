@@ -4,6 +4,7 @@ import com.veylik.news.data.local.ArticleDbModel
 import com.veylik.news.data.remote.NewsResponseDto
 import com.veylik.news.domain.entity.Article
 import com.veylik.news.domain.entity.Interval
+import com.veylik.news.domain.entity.Language
 import java.text.SimpleDateFormat
 import java.util.Locale
 
@@ -18,6 +19,15 @@ fun NewsResponseDto.toDbModels(topic: String): List<ArticleDbModel> {
             topic = topic,
             publishedAt = it.publishedAt.toTimeStamp()
         )
+    }
+}
+
+fun Language.toQueryParam(): String {
+    return when (this) {
+        Language.ENGLISH -> "en"
+        Language.RUSSIAN -> "ru"
+        Language.FRENCH -> "fr"
+        Language.GERMAN -> "de"
     }
 }
 
