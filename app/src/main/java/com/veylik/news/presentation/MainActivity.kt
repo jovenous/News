@@ -14,6 +14,7 @@ import androidx.lifecycle.lifecycleScope
 import coil3.toUri
 import com.veylik.news.data.remote.NewsApiService
 import com.veylik.news.domain.repository.NewsRepository
+import com.veylik.news.presentation.screens.settings.SettingsScreen
 import com.veylik.news.presentation.screens.subscriptions.SubscriptionsScreen
 import com.veylik.news.presentation.ui.theme.NewsTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -34,16 +35,8 @@ class MainActivity : ComponentActivity() {
         }
         setContent {
             NewsTheme {
-                val permissionLauncher = rememberLauncherForActivityResult(
-                    contract = ActivityResultContracts.RequestPermission(),
-                    onResult = { }
-                )
-                SubscriptionsScreen(
-                    onNavigateToSettings = {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                            permissionLauncher.launch(android.Manifest.permission.POST_NOTIFICATIONS)
-                        }
-                    },
+                SettingsScreen(
+                    onBackClick = {}
                 )
             }
         }
